@@ -1,15 +1,15 @@
 <template>
   <div class="about">
     <h1>This is an about page</h1>
+    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum iusto consequatur sint quam consectetur maiores sequi, suscipit esse! Libero minima maiores quasi ab saepe dolorum dignissimos dicta sed velit reiciendis.</p>
   </div>
 </template>
 
 <style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
+
+.about {
+  max-width: 300px;
+  margin: 0 auto;
 }
+
 </style>

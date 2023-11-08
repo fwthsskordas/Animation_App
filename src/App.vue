@@ -1,13 +1,19 @@
 <script setup>
-import {  RouterView } from 'vue-router'
+import { RouterLink ,RouterView } from 'vue-router'
 </script>
 
 <template>
-
-  <RouterView />
+  <header class="container">
+    <RouterLink to="/">Home</RouterLink>
+    <RouterLink to="/about">About</RouterLink>
+  </header>
+  <Transition name="route">
+    <RouterView />
+  </Transition>
 </template>
 
 <style scoped>
+
 header {
   line-height: 1.5;
   max-height: 100vh;
@@ -23,20 +29,6 @@ nav {
   font-size: 12px;
   text-align: center;
   margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
 }
 
 nav a:first-of-type {
@@ -68,5 +60,34 @@ nav a:first-of-type {
     padding: 1rem 0;
     margin-top: 1rem;
   }
+}
+
+.container {
+  max-width: 300px;
+  margin: 0 auto;
+  margin-bottom: 15px;
+}
+
+.container a{
+  margin-right: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  opacity: 0.5;
+}
+
+.container a:hover{
+opacity: 1;
+}
+
+.route-enter-from {
+  opacity: 0;
+  transform: translateX(100px);
+}
+.route-enter-to {
+  opacity: 1;
+  transform: translateX(0);
+}
+.route-enter-active {
+ transition: all 0.5s ease;
 }
 </style>
