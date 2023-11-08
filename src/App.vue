@@ -6,36 +6,14 @@ import { RouterLink ,RouterView } from 'vue-router'
   <header class="container">
     <RouterLink to="/">Home</RouterLink>
     <RouterLink to="/about">About</RouterLink>
+    <Transition name="route">
+      <RouterView />
+    </Transition>
   </header>
-  <Transition name="route">
-    <RouterView />
-  </Transition>
 </template>
 
 <style scoped>
-
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
+/* @media (min-width: 1024px) {
   header {
     display: flex;
     place-items: center;
@@ -60,14 +38,12 @@ nav a:first-of-type {
     padding: 1rem 0;
     margin-top: 1rem;
   }
-}
+} */
 
-.container {
-  max-width: 300px;
-  margin: 0 auto;
-  margin-bottom: 15px;
+.container{
+  align-items: center;
+  margin-left: 10px;
 }
-
 .container a{
   margin-right: 10px;
   font-size: 20px;

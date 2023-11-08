@@ -1,7 +1,6 @@
 <script setup>
 import { ref } from "vue"
 
-// const showText = ref(true)
 const names = ref(["Snap", "fwths"])
 const nameInput = ref("")
 
@@ -18,19 +17,13 @@ const addInvite = () => {
 
 <template>
   <main>
-    <!-- <div class="container">
-      <Transition name="fade">
-        <h1 id="hey" v-if="showText">Hey</h1>
-        <h1 id="bye" v-else>GoodBye</h1>
-      </Transition>
-    </div>
-   <button @click="showText = !showText">Toggle</button> -->
+
    <div class="container">
       <input type="text" placeholder="Add person" v-model="nameInput" @keypress.enter="addInvite">
       <TransitionGroup name="invites">
-        <li  v-for="name in names" :key="name" @click="removeInvite(name)">
-          {{ name }}
-        </li>
+          <li  v-for="name in names" :key="name" @click="removeInvite(name)">
+            {{ name }}
+          </li>
       </TransitionGroup>
    </div>
   </main>
@@ -38,38 +31,11 @@ const addInvite = () => {
 
 
 <style scoped>
-
-/* .fade-enter-from {
- opacity: 0;
-}
-
-.fade-enter-active {
-  transition: all 5s ease;
-}
-
-.fade-leave-to {
-  opacity: 0;
-}
-
-.fade-leave-active {
-  transition: all 3.5s ease-out;
-}
-
-.container {
-  position: relative;
-
-}
-
-h1{
-  position: absolute;
-}
-button{
-  margin-top: 50px;
-} */
-
 .container {
   font-family: 'Courier New', Courier, monospace;
   max-width: 300px;
+  justify-content: center;
+  align-items: center;
   margin: 0 auto;
 }
 
@@ -83,7 +49,7 @@ button{
 }
 
 
-ul{
+.ha {
   display: flex;
   flex-direction: column;
   gap: 6px;
